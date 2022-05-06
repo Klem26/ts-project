@@ -1,8 +1,9 @@
 import React, { FC, useState, useEffect } from "react";
+import axios from "axios";
 import List from "../components/List";
 import TodoItem from "../components/TodoItem";
 import { ITodo } from "../types/types";
-import axios from "axios";
+import NewTodo from "./NewTodo";
 
 const TodosPage: FC = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
@@ -30,7 +31,7 @@ const TodosPage: FC = () => {
         items={todos}
         renderItem={(todo: ITodo) => <TodoItem todo={todo} key={todo.id} />}
       />
-      ;
+      <NewTodo />
     </div>
   );
 };
